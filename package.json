@@ -1,7 +1,13 @@
 {
   "name": "photosite",
   "author": "Jan Kuparinen",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "homepage": "/photobrowser",
+  "license": "CC BY-SA 4.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/copperii/photobrowser.git"
+  },
   "private": true,
   "dependencies": {
     "axios": "^0.19.2",

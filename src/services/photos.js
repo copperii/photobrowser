@@ -3,7 +3,6 @@ const baseUrl =
   'https://jsonplaceholder.typicode.com/photos?_start=50&_limit=150'
 // const baseUrl = 'https://jsonplaceholder.typicode.com/photos'
 // const baseUrl = process.env.REACT_APP_APIURI + path
-// const baseUrl = 'http://localhost:3001/photos'
 
 const getAll = async () => {
   const response = await axios.get(baseUrl)

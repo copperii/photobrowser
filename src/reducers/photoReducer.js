@@ -1,7 +1,6 @@
 import photoService from '../services/photos'
 
 const photoReducer = (state = [], action) => {
-  //console.log('photo state: ', state, ' action:', action)
   switch (action.type) {
     case 'NEW_PHOTO':
       return [...state, action.data]

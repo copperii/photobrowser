@@ -1,23 +1,32 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { filterChange } from '../reducers/filterReducer'
-import { H3, Img } from './allPhotos.styles'
+import { H3, Img, Detail, Section, Thumbnail, Text } from './allPhotos.styles'
 
 const Photo = ({ showDetail, photo, handleClick }) => {
   if (showDetail) {
-    // console.log('showDetail called')
-
     return (
       <>
-        <H3 onClick={handleClick}>{photo.title}</H3>
-        <Img onClick={handleClick} src={photo.url} />
+        <Detail>
+          <H3 onClick={handleClick}>{photo.title}</H3>
+          <Img
+            onClick={handleClick}
+            src={photo.url}
+            alt='Large picture'
+            title='Click on the picture to go back'
+          />
+          <Text>Click the picture to go back.</Text>
+        </Detail>
       </>
     )
   }
   return (
-    <>
-      <Img onClick={handleClick} src={photo.thumbnailUrl} />
-    </>
+    <Thumbnail
+      onClick={handleClick}
+      src={photo.thumbnailUrl}
+      alt='Thumbnail'
+      title='Click on the picture for larger view'
+    />
   )
 }
 
@@ -32,13 +41,12 @@ const AllPhotos = () => {
   })
 
   const toggleShowPhoto = id => {
-    // console.log('photo with id clicked', id)
     showDetail ? dispatch(filterChange('ALL')) : dispatch(filterChange(id))
     setShowDetail(!showDetail)
   }
 
   return (
-    <ul>
+    <Section>
       {photos.map(photo => (
         <Photo
           key={photo.id}
@@ -47,7 +55,7 @@ const AllPhotos = () => {
           showDetail={showDetail}
         />
       ))}
-    </ul>
+    </Section>
   )
 }
 

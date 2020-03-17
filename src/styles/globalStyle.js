@@ -35,6 +35,7 @@ export const Section = styled.section`
   padding: ${props => (props.top ? '2em' : '0')};
   margin-top: ${props => (props.marginTop ? '1em' : '0')};
 `
+
 export const Text = styled.div`
   margin-top: 1em;
 `
